@@ -10,7 +10,7 @@ export class Subscription {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ type: 'timestamptz' })
   created_at: Date;
 
   @Column()
@@ -22,7 +22,7 @@ export class Subscription {
   @Column()
   checkout_id: string;
 
-  @Column()
+  @Column({ type: 'timestamptz' })
   event_time: Date;
 
   @Column()
