@@ -19,6 +19,10 @@ export class SubscriptionsService {
     return this.subscriptionsRepository.create(dto);
   }
 
+  updateOne(id: string, data: Partial<Subscription>) {
+    return this.subscriptionsRepository.update(id, data);
+  }
+
   verifySubscription(licence: string) {
     return this.subscriptionsRepository.findOne({
       where: {

@@ -29,6 +29,11 @@ export class AuthController {
     if (subscription.isUsed) {
       throw new BadRequestException('licence already used');
     }
+
+    await this.subscriptionsService.updateOne(subscription.id, {
+      isUsed: true,
+    });
+
     return res.status(200).send();
   }
 }
