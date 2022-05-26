@@ -18,4 +18,12 @@ export class SubscriptionsService {
   makeOne(dto: PaymentSuccessDto) {
     return this.subscriptionsRepository.create(dto);
   }
+
+  verifySubscription(licence: string) {
+    return this.subscriptionsRepository.findOne({
+      where: {
+        licence,
+      },
+    });
+  }
 }

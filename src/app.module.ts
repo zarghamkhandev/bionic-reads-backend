@@ -7,6 +7,7 @@ import { config } from './config/config';
 import { DatabaseConfig } from './config/database.config';
 import { PaddleModule } from './paddle/paddle.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { SubscriptionsModule } from './subscriptions/subscriptions.module';
     }),
     PaddleModule,
     SubscriptionsModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
