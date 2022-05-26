@@ -36,4 +36,7 @@ export class Subscription {
 
   @Column()
   product_id: string;
+
+  @Column({ default: false })
+  isUsed: boolean;
 }

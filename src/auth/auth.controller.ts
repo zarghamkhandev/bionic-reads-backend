@@ -25,7 +25,10 @@ export class AuthController {
     if (!subscription) {
       throw new BadRequestException('invalid licence');
     }
-    console.log(subscription);
+
+    if (subscription.isUsed) {
+      throw new BadRequestException('licence already used');
+    }
     return res.status(200).send();
   }
 }
