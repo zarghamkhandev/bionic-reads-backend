@@ -15,7 +15,7 @@ export class AuthController {
   constructor(private readonly subscriptionsService: SubscriptionsService) {}
 
   @Post()
-  async activate(@Body() body: ActivateDto, @Res() res: Response) {
+  async activate(@Body() body: ActivateDto) {
     const { code } = body;
 
     const subscription = await this.subscriptionsService.verifySubscription(
