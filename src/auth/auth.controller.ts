@@ -34,6 +34,8 @@ export class AuthController {
       isUsed: true,
     });
 
-    return res.status(200).send();
+    return {
+      status: 'success',
+    };
   }
 }
